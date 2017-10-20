@@ -13,17 +13,19 @@ const coloredReindeerBuilder = function () {
             let currentReindeer = reindeer[i]
             let currentColor = color[i]
 
+        //Step 3:  Create the foundation of my object to include "reindeer" and "color" values
+            return Object.create (null, {
+                "Reindeer": {
+                    enumerable: true,
+                    value: currentReindeer
+                },
+    
+                "Color": {
+                    enumerable: true,
+                    value: currentColor
+                }
+            })
         }
-        //Step ?:  Create the foundation of my object to include "reindeer" and "color"
-        return object.create (null, {
-            "Reindeer": {
-                enumerable: true,
-                value: currentReindeer
-            },
-
-            "Color": {
-                enumerable: true,
-                value: currentColor
-            }
-        })
 }
+
+console.log(coloredReindeerBuilder());
