@@ -14,7 +14,7 @@ const coloredReindeerBuilder = function* () {
     
             //Step 3:  Create the foundation of my object to include "reindeer" and "color" values
                 yield Object.create (null, {
-                    "Reindeer": {
+                    "Name": {
                         enumerable: true,
                         value: currentReindeer
                     },
@@ -25,11 +25,27 @@ const coloredReindeerBuilder = function* () {
                     }
                 })
             }
+
+   
+    let reindeerObject = coloredReindeerBuilder();
+    
+        
+        // console.log(reindeerObject.next().value);
+        // console.log(reindeerObject.next().value);
+        // console.log(reindeerObject.next().value);
+        // console.log(reindeerObject.next().value);
+    
+        let coloredReindeerArray = [];
+    
+        //Create a loop to iterate and push items into the empty "coloredReindeerArray"
+        for(i=0; i < reindeer.length; i++){
+            coloredReindeerArray.push(reindeerObject.next().value);
+        }
+        console.log(coloredReindeerArray);
     }
 
-    coloredReindeerArray = coloredReindeerBuilder();
+coloredReindeerBuilder();
 
-    console.log(coloredReindeerArray.next().value);
-    console.log(coloredReindeerArray.next().value);
-    console.log(coloredReindeerArray.next().value);
-    console.log(coloredReindeerArray.next().value);
+
+//Still working...
+
